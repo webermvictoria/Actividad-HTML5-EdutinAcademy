@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda avanzada de Google</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="advanced-search.css">
+</head>
+<body class="advanced-page">
+    <header class="advanced-header">
+        <a class="advanced-home-link" href="index.html">Página principal</a>
+    </header>
+
+    <main class="advanced-container">
+        <div class="advanced-logo">
+            <img src="google.png" alt="Google">
+        </div>
+        <h1>Búsqueda avanzada</h1>
+
+        <form class="advanced-form" action="https://www.google.com/search" method="get">
+            <div class="advanced-field">
+                <label for="all-words">Encontrar páginas con... todas estas palabras:</label>
+                <input id="all-words" type="text" name="as_q">
+            </div>
+
+            <div class="advanced-field">
+                <label for="exact-phrase">Buscar páginas con... esta palabra o frase exacta:</label>
+                <input id="exact-phrase" type="text" name="as_epq">
+            </div>
+
+            <div class="advanced-field">
+                <label for="any-words">Encuentra páginas con... cualquiera de estas palabras:</label>
+                <input id="any-words" type="text" name="as_oq">
+            </div>
+
+            <div class="advanced-field">
+                <label for="none-words">Encontrar páginas con... ninguna de estas palabras:</label>
+                <input id="none-words" type="text" name="as_eq">
+            </div>
+
+            <button type="submit">Búsqueda avanzada</button>
+        </form>
+    </main>
+
+    <script>
+        const advancedForm = document.querySelector(".advanced-form");
+        const searchFields = [...advancedForm.querySelectorAll('input[type="text"]')];
+
+        advancedForm.addEventListener("input", () => {
+            searchFields[0].setCustomValidity("");
+        });
+
+        advancedForm.addEventListener("submit", (event) => {
+            const hasSearchTerm = searchFields.some((field) => field.value.trim() !== "");
+            searchFields[0].setCustomValidity(
+                hasSearchTerm ? "" : "Completa al menos uno de los campos para buscar."
+            );
+
+            if (!hasSearchTerm) {
+                event.preventDefault();
+                advancedForm.reportValidity();
+            }
+        });
+    </script>
+</body>
+</html>

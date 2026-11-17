@@ -1,0 +1,108 @@
+.advanced-page {
+    min-height: 100vh;
+    color: #202124;
+    background: #fff;
+}
+
+.advanced-header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 28px;
+}
+
+.advanced-home-link {
+    color: #1a73e8;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.advanced-home-link:hover {
+    text-decoration: underline;
+}
+
+.advanced-container {
+    width: min(560px, calc(100% - 56px));
+    margin: 52px 0 64px 28px;
+}
+
+.advanced-logo {
+    width: min(220px, 70vw);
+    aspect-ratio: 3 / 1;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.advanced-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.advanced-container h1 {
+    margin: 0 0 28px;
+    color: #d93025;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.advanced-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+}
+
+.advanced-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.advanced-field label {
+    color: #3c4043;
+    font-size: 14px;
+}
+
+.advanced-field input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 11px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    background: #fff;
+    color: #202124;
+    font-size: 14px;
+}
+
+.advanced-field input[type="text"]:focus {
+    border-color: #1a73e8;
+    outline: 1px solid #1a73e8;
+}
+
+.advanced-form button {
+    align-self: flex-start;
+    margin-top: 4px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background-color: #1a73e8;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.advanced-form button:hover {
+    background-color: #1765cc;
+}
+
+@media (max-width: 480px) {
+    .advanced-header {
+        padding: 18px 20px;
+    }
+
+    .advanced-container {
+        width: calc(100% - 40px);
+        margin: 40px 20px 64px;
+    }
+}
